@@ -14,6 +14,12 @@ urlpatterns = [
 
     path('contact', views.contact_page, name='contact'),
     path('contact/', views.contact_page, name='contact'),
+
+    path('article/<int:article_id>', views.article_page, name='article'),
+    path('article/<int:article_id>/', views.article_page, name='article'),
+
+    path('comment/<int:article_id>', views.commentpost, name='postcomment'),
+    path('comment/<int:article_id>/', views.commentpost, name='postcomment'),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
